@@ -6,15 +6,15 @@
   "prefix": "angular-spotify",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:application",
       "options": {
         "outputPath": "dist/apps/angular-spotify",
         "index": {
           "input": "apps/angular-spotify/src/index.prod.html",
           "output": "index.html"
         },
-        "main": "apps/angular-spotify/src/main.ts",
-        "polyfills": "apps/angular-spotify/src/polyfills.ts",
+        "browser": "apps/angular-spotify/src/main.ts",
+        "polyfills": ["apps/angular-spotify/src/polyfills.ts"],
         "tsConfig": "apps/angular-spotify/tsconfig.app.json",
         "assets": [
           "apps/angular-spotify/src/assets",
@@ -35,9 +35,7 @@
         },
         "styles": ["apps/angular-spotify/src/styles.scss"],
         "scripts": [],
-        "vendorChunk": true,
         "extractLicenses": false,
-        "buildOptimizer": false,
         "sourceMap": true,
         "optimization": false,
         "namedChunks": true
@@ -73,8 +71,7 @@
               "maximumError": "10kb"
             }
           ],
-          "serviceWorker": true,
-          "ngswConfigPath": "apps/angular-spotify/ngsw-config.json"
+          "serviceWorker": "apps/angular-spotify/ngsw-config.json",
         }
       },
       "defaultConfiguration": ""
