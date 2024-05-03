@@ -71,7 +71,7 @@
               "maximumError": "10kb"
             }
           ],
-          "serviceWorker": "apps/angular-spotify/ngsw-config.json",
+          "serviceWorker": "apps/angular-spotify/ngsw-config.json"
         }
       },
       "defaultConfiguration": ""
