@@ -26,12 +26,19 @@ export class SpotifyAuthorize {
   ];
 
   createAuthorizeURL() {
-    const params = new URLSearchParams({
+    const url = new URL(this.SPOTIFY_AUTHORIZE_URL);
+    const searchParams = new URLSearchParams({
       client_id: this.CLIENT_ID,
-      redirect_uri: `${window.location.origin}`,
-      scope: encodeURIComponent(this.SCOPES.join(' ')),
+      redirect_uri: window.location.origin,
+      scope: this.SCOPES.join(' '),
       response_type: 'token'
     });
-    return `${this.SPOTIFY_AUTHORIZE_URL}?${params.toString()}`;
+
+    // Add or update parameters
+    for (const [key, value] of searchParams.entries()) {
+      url.searchParams.append(key, value);
+    }
+
+    return url.toString();
   }
 }
