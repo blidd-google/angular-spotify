@@ -1,6 +1,6 @@
 export class SpotifyAuthorize {
   SPOTIFY_AUTHORIZE_URL = 'https://accounts.spotify.com/authorize';
-  CLIENT_ID = '211ae684b09044c7848825119904c05e';
+  CLIENT_ID = 'a344582d4cc84d20b83c8363bfffaeb3';
   SCOPES = [
     //Listening History
     'user-read-recently-played',
